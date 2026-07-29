@@ -2,6 +2,18 @@
 
 Welcome to the JobSearch Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
+## How To Use
+
+1. Type in the job title you are looking for
+2. Upload a PDF of your resume
+3. The agent should generate a report on what jobs are available to apply to
+
+## Frameworks
+
+ - CrewAI
+ - Gradio
+ - OpenAI api
+
 ## Installation
 
 Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
@@ -29,14 +41,6 @@ crewai install
 
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the job_search Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+To run the project, run app.py. This will open a gradio server for the project. Additionally, job_report.md will be made containing the report in markdown. 
 
 
