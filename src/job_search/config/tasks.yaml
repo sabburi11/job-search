@@ -1,0 +1,28 @@
+search_for_job:
+  description: >
+    Find jobs relevant to {job_title} and {current_date}.  PLEASE, ONLY MAKE 6 SEARCHES MAX. DONT MAKE MORE THAN 6 SEARCHES.
+  expected_output: >
+    A list of 3-6 relevant jobs. Only output the list of relevant jobs and nothing else.
+  agent: job_search
+  output_file: job_results.json
+
+match_job:
+  description: >
+    Given a list of 3-6 jobs, write an analysis on whether the job is suitable or not. PLEASE, ONLY MAKE 6 SEARCHES MAX. DONT MAKE MORE THAN 6 SEARCHES.
+  expected_output: >
+    Analysis on each job and how well the user suits the job.
+  agent: match_analysis
+  output_file: match.json
+  context:
+    - search_for_job
+
+write_report:
+  description: >
+    Given a list of jobs and the analysis for each job, write a detailed and organized report combining the jobs and the analysis for each job. Dont write any follow up questions at the end.
+  expected_output: >
+    Report on jobs and each of the job's analysis.
+  agent: report_writer
+  output_file: job_report.md
+  context:
+     - search_for_job
+     - match_job
